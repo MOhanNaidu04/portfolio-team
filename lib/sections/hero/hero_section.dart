@@ -69,9 +69,22 @@ class HeroSection extends StatelessWidget {
           child: AnimatedTextKit(
             repeatForever: true,
             animatedTexts: [
-              TypewriterAnimatedText("Flutter Developer"),
-              TypewriterAnimatedText("Full Stack Developer"),
-              TypewriterAnimatedText("AI Enthusiast"),
+              TypewriterAnimatedText(
+                "Software Developer",
+                speed: const Duration(milliseconds: 70),
+              ),
+              TypewriterAnimatedText(
+                "Full Stack Developer",
+                speed: const Duration(milliseconds: 70),
+              ),
+              TypewriterAnimatedText(
+                "Java Developer",
+                speed: const Duration(milliseconds: 70),
+              ),
+              TypewriterAnimatedText(
+                "React Developer",
+                speed: const Duration(milliseconds: 70),
+              ),
             ],
           ),
         ),
@@ -79,7 +92,7 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 30),
 
         const Text(
-          "Building premium Flutter, AI and Full Stack applications with modern user experiences.",
+          "Passionate Software Developer specializing in Full Stack Development, Java, Spring Boot, React.js and REST APIs. I enjoy building scalable, responsive, and user-focused applications that solve real-world problems.Building premium Flutter, AI and Full Stack applications with modern user experiences.",
           style: TextStyle(
             fontSize: 18,
             color: AppColors.secondary,
@@ -116,6 +129,7 @@ const Icon(
 ),
 
       ],
+      
     ),
   );
 
