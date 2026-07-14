@@ -94,13 +94,29 @@ class HeroSection extends StatelessWidget {
             const SizedBox(width: 20),
 
             OutlinedButton(
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 25, vertical: 18),
-                child: Text("Download Resume"),
-              ),
-            ),
+  style: OutlinedButton.styleFrom(
+    foregroundColor: Colors.black,
+    side: const BorderSide(
+      color: Colors.black,
+      width: 1.5,
+    ),
+    padding: const EdgeInsets.symmetric(
+      horizontal: 35,
+      vertical: 22,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(18),
+    ),
+  ),
+  onPressed: () {},
+  child: const Text(
+    "Download Resume",
+    style: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+),
           ],
         ),
       ],
