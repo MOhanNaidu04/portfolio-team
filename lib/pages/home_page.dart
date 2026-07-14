@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/common/navbar.dart';
 import '../sections/hero/hero_section.dart';
+import '../sections/about/about_section.dart';
+import '../sections/experience/experience_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,6 +58,10 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 90),
 
                 HeroSection(),
+
+                const AboutSection(),
+
+                const ExperienceSection(),
 
                 SizedBox(height: 1000),
 
