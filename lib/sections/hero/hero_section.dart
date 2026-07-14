@@ -6,7 +6,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../animations/fade_slide_animation.dart';
 import '../../widgets/buttons/primary_button.dart';
 import '../../widgets/buttons/secondary_button.dart';
-import '../../widgets/cards/glass_card.dart';
+import '../../widgets/hero/hero_image.dart';
+import '../../widgets/hero/scroll_indicator.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -122,11 +123,7 @@ class HeroSection extends StatelessWidget {
 
         const SizedBox(height: 80),
 
-const Icon(
-  Icons.keyboard_double_arrow_down,
-  size: 38,
-  color: Colors.grey,
-),
+const ScrollIndicator(),
 
       ],
       
@@ -141,15 +138,7 @@ const Icon(
     child: Column(
       children: [
 
-        GlassCard(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: Image.asset(
-              "assets/images/profile.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+        const HeroImage(),
 
         const SizedBox(height: 30),
 
