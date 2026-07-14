@@ -4,6 +4,8 @@ import '../../widgets/cards/tech_chip.dart';
 import '../../widgets/common/section_container.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../animations/fade_slide_animation.dart';
+import '../../widgets/buttons/primary_button.dart';
+import '../../widgets/buttons/secondary_button.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -87,21 +89,22 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 40),
 
         Row(
-          children: [
+  children: [
 
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Hire Me"),
-            ),
+    PrimaryButton(
+      text: "Hire Me",
+      onPressed: () {},
+    ),
 
-            const SizedBox(width: 20),
+    const SizedBox(width: 20),
 
-            OutlinedButton(
-              onPressed: () {},
-              child: const Text("Download CV"),
-            ),
-          ],
-        ),
+    SecondaryButton(
+      text: "Download Resume",
+      onPressed: () {},
+    ),
+
+  ],
+),
 
         const SizedBox(height: 80),
 
