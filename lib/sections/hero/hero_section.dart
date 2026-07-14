@@ -43,7 +43,7 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 20),
 
         const Text(
-          "MOHAN\nNAIDU",
+          "RAGHAVA",
           style: TextStyle(
             fontSize: 72,
             fontWeight: FontWeight.bold,
