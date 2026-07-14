@@ -69,13 +69,27 @@ class HeroSection extends StatelessWidget {
         Row(
           children: [
             ElevatedButton(
-              onPressed: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 25, vertical: 18),
-                child: Text("Hire Me"),
-              ),
-            ),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.black,
+    foregroundColor: Colors.white,
+    padding: const EdgeInsets.symmetric(
+      horizontal: 35,
+      vertical: 22,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(18),
+    ),
+    elevation: 2,
+  ),
+  onPressed: () {},
+  child: const Text(
+    "Hire Me",
+    style: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+),
 
             const SizedBox(width: 20),
 
