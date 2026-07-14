@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../widgets/cards/tech_chip.dart';
+import '../../widgets/common/section_container.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -9,8 +11,7 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 80),
+    return SectionContainer(
       child: width > 900
           ? Row(
               children: [
@@ -33,34 +34,52 @@ class HeroSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Hello, I'm",
-          style: TextStyle(
-            fontSize: 24,
-            color: AppColors.secondary,
-          ),
-        ),
+        const Text(
+  "Hello 👋",
+  style: TextStyle(
+    fontSize: 22,
+    color: AppColors.secondary,
+    fontWeight: FontWeight.w500,
+  ),
+),
 
         const SizedBox(height: 20),
 
         const Text(
-          "RAGHAVA",
-          style: TextStyle(
-            fontSize: 72,
-            fontWeight: FontWeight.bold,
-            height: 1.0,
-          ),
-        ),
+  "RAGHAVA",
+  style: TextStyle(
+    fontSize: 76,
+    fontWeight: FontWeight.bold,
+    height: 0.95,
+    letterSpacing: -2,
+  ),
+),
 
         const SizedBox(height: 25),
 
-        const Text(
-  "I build premium Flutter applications,\n"
-  "Full Stack web applications,\n"
-  "and AI-powered digital products.",
-  style: TextStyle(
-    fontSize: 20,
-    height: 1.8,
+        DefaultTextStyle(
+  style: const TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  ),
+  child: AnimatedTextKit(
+    repeatForever: true,
+    pause: const Duration(milliseconds: 800),
+    animatedTexts: [
+      TypewriterAnimatedText(
+        "Flutter Developer",
+        speed: const Duration(milliseconds: 80),
+      ),
+      TypewriterAnimatedText(
+        "Full Stack Developer",
+        speed: const Duration(milliseconds: 80),
+      ),
+      TypewriterAnimatedText(
+        "AI Enthusiast",
+        speed: const Duration(milliseconds: 80),
+      ),
+    ],
   ),
 ),
 
