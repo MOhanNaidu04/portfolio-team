@@ -3,6 +3,7 @@ import '../../core/constants/app_colors.dart';
 import '../../widgets/cards/tech_chip.dart';
 import '../../widgets/common/section_container.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../animations/fade_slide_animation.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -30,123 +31,100 @@ class HeroSection extends StatelessWidget {
     );
   }
 
-  Widget _leftSide() {
-    return Column(
+ Widget _leftSide() {
+  return FadeSlideAnimation(
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+
         const Text(
-  "Hello 👋",
-  style: TextStyle(
-    fontSize: 22,
-    color: AppColors.secondary,
-    fontWeight: FontWeight.w500,
-  ),
-),
+          "Hello 👋",
+          style: TextStyle(
+            fontSize: 22,
+            color: AppColors.secondary,
+          ),
+        ),
 
         const SizedBox(height: 20),
 
         const Text(
-  "RAGHAVA",
-  style: TextStyle(
-    fontSize: 76,
-    fontWeight: FontWeight.bold,
-    height: 0.95,
-    letterSpacing: -2,
-  ),
-),
+          "I'm Raghava",
+          style: TextStyle(
+            fontSize: 76,
+            fontWeight: FontWeight.bold,
+            height: .95,
+          ),
+        ),
 
         const SizedBox(height: 25),
 
         DefaultTextStyle(
-  style: const TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w600,
-    color: Colors.black,
-  ),
-  child: AnimatedTextKit(
-    repeatForever: true,
-    pause: const Duration(milliseconds: 800),
-    animatedTexts: [
-      TypewriterAnimatedText(
-        "Flutter Developer",
-        speed: const Duration(milliseconds: 80),
-      ),
-      TypewriterAnimatedText(
-        "Full Stack Developer",
-        speed: const Duration(milliseconds: 80),
-      ),
-      TypewriterAnimatedText(
-        "AI Enthusiast",
-        speed: const Duration(milliseconds: 80),
-      ),
-    ],
-  ),
-),
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+          child: AnimatedTextKit(
+            repeatForever: true,
+            animatedTexts: [
+              TypewriterAnimatedText("Flutter Developer"),
+              TypewriterAnimatedText("Full Stack Developer"),
+              TypewriterAnimatedText("AI Enthusiast"),
+            ],
+          ),
+        ),
+
+        const SizedBox(height: 30),
+
+        const Text(
+          "Building premium Flutter, AI and Full Stack applications with modern user experiences.",
+          style: TextStyle(
+            fontSize: 18,
+            color: AppColors.secondary,
+            height: 1.7,
+          ),
+        ),
 
         const SizedBox(height: 40),
 
         Row(
           children: [
+
             ElevatedButton(
-  style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.black,
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(
-      horizontal: 35,
-      vertical: 22,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(18),
-    ),
-    elevation: 2,
-  ),
-  onPressed: () {},
-  child: const Text(
-    "Hire Me",
-    style: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
-    ),
-  ),
-),
+              onPressed: () {},
+              child: const Text("Hire Me"),
+            ),
 
             const SizedBox(width: 20),
 
             OutlinedButton(
-  style: OutlinedButton.styleFrom(
-    foregroundColor: Colors.black,
-    side: const BorderSide(
-      color: Colors.black,
-      width: 1.5,
-    ),
-    padding: const EdgeInsets.symmetric(
-      horizontal: 35,
-      vertical: 22,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(18),
-    ),
-  ),
-  onPressed: () {},
-  child: const Text(
-    "Download Resume",
-    style: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
-    ),
-  ),
-),
+              onPressed: () {},
+              child: const Text("Download CV"),
+            ),
           ],
         ),
+
+        const SizedBox(height: 80),
+
+const Icon(
+  Icons.keyboard_double_arrow_down,
+  size: 38,
+  color: Colors.grey,
+),
+
       ],
-    );
-  }
+    ),
+  );
+
+}
 
   Widget _rightSide() {
-  return Column(
+  return FadeSlideAnimation(
+  delay: 300,
+  child: Column(
     children: [
 
-      Container(
+      AnimatedContainer(
+  duration: const Duration(seconds: 2),
         width: 420,
         height: 500,
         decoration: BoxDecoration(
@@ -189,5 +167,6 @@ class HeroSection extends StatelessWidget {
         ],
       ),
     ],
+  ),
   );
 }}
