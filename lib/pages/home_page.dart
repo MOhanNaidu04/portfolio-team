@@ -6,6 +6,7 @@ import '../sections/experience/experience_section.dart';
 import '../sections/projects/projects_section.dart';
 import '../sections/skills/skills_section.dart';
 import '../sections/contact/contact_section.dart';
+import '../sections/footer/footer_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,6 +72,8 @@ class _HomePageState extends State<HomePage> {
                 const SkillsSection(),
 
                 const ContactSection(),
+
+                const FooterSection(),
 
                 SizedBox(height: 1000),
 
