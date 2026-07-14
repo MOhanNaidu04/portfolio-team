@@ -34,9 +34,11 @@ dependencies:
   flutter_svg: ^2.0.10+1
 
 flutter:
+
+  uses-material-design: true
+
   assets:
     - assets/images/
     - assets/icons/
     - assets/svg/
-    - assets/animations/
     - assets/resume/

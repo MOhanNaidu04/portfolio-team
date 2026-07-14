@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
+import '../../widgets/cards/tech_chip.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -54,12 +55,14 @@ class HeroSection extends StatelessWidget {
         const SizedBox(height: 25),
 
         const Text(
-          "Flutter Developer\nFull Stack Developer\nAI Enthusiast",
-          style: TextStyle(
-            fontSize: 22,
-            height: 1.8,
-          ),
-        ),
+  "I build premium Flutter applications,\n"
+  "Full Stack web applications,\n"
+  "and AI-powered digital products.",
+  style: TextStyle(
+    fontSize: 20,
+    height: 1.8,
+  ),
+),
 
         const SizedBox(height: 40),
 
@@ -91,8 +94,10 @@ class HeroSection extends StatelessWidget {
   }
 
   Widget _rightSide() {
-    return Center(
-      child: Container(
+  return Column(
+    children: [
+
+      Container(
         width: 420,
         height: 500,
         decoration: BoxDecoration(
@@ -100,18 +105,40 @@ class HeroSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
           boxShadow: [
             BoxShadow(
-              blurRadius: 20,
               color: Colors.black.withOpacity(.08),
+              blurRadius: 20,
             ),
           ],
         ),
-        child: const Center(
-          child: Icon(
-            Icons.person,
-            size: 180,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Image.asset(
+            "assets/images/profile.png",
+            fit: BoxFit.cover,
           ),
         ),
       ),
-    );
-  }
-}
+
+      const SizedBox(height: 30),
+
+      Wrap(
+        spacing: 15,
+        runSpacing: 15,
+        alignment: WrapAlignment.center,
+        children: const [
+
+          TechChip(text: "Flutter"),
+
+          TechChip(text: "React"),
+
+          TechChip(text: "AI"),
+
+          TechChip(text: "Node.js"),
+
+          TechChip(text: "PostgreSQL"),
+
+        ],
+      ),
+    ],
+  );
+}}
