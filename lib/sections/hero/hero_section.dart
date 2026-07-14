@@ -6,6 +6,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../animations/fade_slide_animation.dart';
 import '../../widgets/buttons/primary_button.dart';
 import '../../widgets/buttons/secondary_button.dart';
+import '../../widgets/cards/glass_card.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -122,54 +123,41 @@ const Icon(
 
   Widget _rightSide() {
   return FadeSlideAnimation(
-  delay: 300,
-  child: Column(
-    children: [
+    delay: 300,
+    child: Column(
+      children: [
 
-      AnimatedContainer(
-  duration: const Duration(seconds: 2),
-        width: 420,
-        height: 500,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(.08),
-              blurRadius: 20,
+        GlassCard(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset(
+              "assets/images/profile.png",
+              fit: BoxFit.cover,
             ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-          child: Image.asset(
-            "assets/images/profile.png",
-            fit: BoxFit.cover,
           ),
         ),
-      ),
 
-      const SizedBox(height: 30),
+        const SizedBox(height: 30),
 
-      Wrap(
-        spacing: 15,
-        runSpacing: 15,
-        alignment: WrapAlignment.center,
-        children: const [
+        Wrap(
+          spacing: 15,
+          runSpacing: 15,
+          alignment: WrapAlignment.center,
+          children: const [
 
-          TechChip(text: "Flutter"),
+            TechChip(text: "Flutter"),
 
-          TechChip(text: "React"),
+            TechChip(text: "React"),
 
-          TechChip(text: "AI"),
+            TechChip(text: "AI"),
 
-          TechChip(text: "Node.js"),
+            TechChip(text: "Node.js"),
 
-          TechChip(text: "PostgreSQL"),
+            TechChip(text: "PostgreSQL"),
 
-        ],
-      ),
-    ],
-  ),
+          ],
+        ),
+      ],
+    ),
   );
 }}
