@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
 
                 const FooterSection(),
 
-                SizedBox(height: 1000),
+                // // SizedBox(height: 1000),
 
               ],
             ),
