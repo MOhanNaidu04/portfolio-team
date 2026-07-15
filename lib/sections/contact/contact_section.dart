@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
-import '../../widgets/common/section_container.dart';
 import '../../core/navigation/scroll_keys.dart';
+import '../../core/url_launcher_service.dart';
+import '../../widgets/common/section_container.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -45,46 +46,59 @@ class ContactSection extends StatelessWidget {
                 flex: 2,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-
-                    Text(
+                  children: [
+                    const Text(
                       "I'm currently available for internships, full-time opportunities and freelance work. Feel free to connect with me.",
                       style: TextStyle(
                         fontSize: 18,
                         height: 1.8,
                       ),
                     ),
-
-                    SizedBox(height: 40),
-
-                    ContactTile(
-                      icon: Icons.phone,
-                      title: "Phone",
-                      value: "+91 9347504183",
+                    const SizedBox(height: 40),
+                    InkWell(
+                      onTap: () => UrlLauncherService.makePhoneCall(
+                        "+919347504183",
+                      ),
+                      child: const ContactTile(
+                        icon: Icons.phone,
+                        title: "Phone",
+                        value: "+91 93475 04183",
+                      ),
                     ),
-
-                    ContactTile(
-                      icon: Icons.email,
-                      title: "Email",
-                      value: "raghava45@gmail.com",
+                    InkWell(
+                      onTap: () => UrlLauncherService.sendEmail(
+                        "raghava45@gmail.com",
+                      ),
+                      child: const ContactTile(
+                        icon: Icons.email,
+                        title: "Email",
+                        value: "raghava45@gmail.com",
+                      ),
                     ),
-
-                    ContactTile(
+                    const ContactTile(
                       icon: Icons.location_on,
                       title: "Location",
                       value: "Hyderabad, Telangana",
                     ),
-
-                    ContactTile(
-                      icon: Icons.link,
-                      title: "LinkedIn",
-                      value: "https://www.linkedin.com/in/raghava-velugapally-b60802394/",
+                    InkWell(
+                      onTap: () => UrlLauncherService.openUrl(
+                        "https://www.linkedin.com/in/raghava-velugapally-b60802394/",
+                      ),
+                      child: const ContactTile(
+                        icon: Icons.work,
+                        title: "LinkedIn",
+                        value: "raghava-velugapally",
+                      ),
                     ),
-
-                    ContactTile(
-                      icon: Icons.code,
-                      title: "GitHub",
-                      value: "https://github.com/miyamurah1",
+                    InkWell(
+                      onTap: () => UrlLauncherService.openUrl(
+                        "https://github.com/miyamurah1",
+                      ),
+                      child: const ContactTile(
+                        icon: Icons.code,
+                        title: "GitHub",
+                        value: "miyamurah1",
+                      ),
                     ),
                   ],
                 ),
