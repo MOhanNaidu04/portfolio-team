@@ -64,7 +64,7 @@ class Navbar extends StatelessWidget {
 
               const Spacer(),
 
-_menu("About"),
+_menu("Home", ScrollKeys.heroKey),
               _menu(
    "About",
    ScrollKeys.aboutKey,
