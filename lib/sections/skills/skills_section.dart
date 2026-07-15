@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../widgets/common/section_container.dart';
+import '../../core/navigation/scroll_keys.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SectionContainer(
+    return Container(
+  key: ScrollKeys.skillsKey,
+  child: SectionContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -87,6 +90,7 @@ class SkillsSection extends StatelessWidget {
           ),
         ],
       ),
+  ),
     );
   }
 }

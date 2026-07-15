@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/navigation/scroll_keys.dart';
 
 class Navbar extends StatelessWidget {
 
@@ -63,12 +64,27 @@ class Navbar extends StatelessWidget {
 
               const Spacer(),
 
-              _menu("Home"),
-              _menu("About"),
-              _menu("Experience"),
-              _menu("Projects"),
-              _menu("Skills"),
-              _menu("Contact"),
+_menu("About"),
+              _menu(
+   "About",
+   ScrollKeys.aboutKey,
+),
+             _menu(
+   "Experience",
+   ScrollKeys.experienceKey,
+),
+              _menu(
+   "Projects",
+   ScrollKeys.projectsKey,
+),
+             _menu(
+   "Skills",
+   ScrollKeys.skillsKey,
+),
+             _menu(
+   "Contact",
+   ScrollKeys.contactKey,
+),
 
               const SizedBox(width: 30),
 
@@ -100,7 +116,7 @@ class Navbar extends StatelessWidget {
     );
   }
 
-  Widget _menu(String title) {
+  Widget _menu(String title, [GlobalKey? targetKey]) {
 
     return Padding(
 
@@ -110,16 +126,22 @@ class Navbar extends StatelessWidget {
 
         cursor: SystemMouseCursors.click,
 
-        child: Text(
-
-          title,
-
-          style: const TextStyle(
-
-            fontSize: 17,
-
-            fontWeight: FontWeight.w500,
-
+        child: GestureDetector(
+          onTap: () {
+            if (targetKey?.currentContext != null) {
+              Scrollable.ensureVisible(
+                targetKey!.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            }
+          },
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),

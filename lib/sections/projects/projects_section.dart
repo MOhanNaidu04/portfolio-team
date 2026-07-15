@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
-import '../../widgets/cards/project_card.dart';
+import '../../widgets/cards/.dart';
 import '../../widgets/common/section_container.dart';
+import '../../core/navigation/scroll_keys.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SectionContainer(
+    return Container(
+  key: ScrollKeys.projectsKey,
+  child: SectionContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -84,6 +87,7 @@ class ProjectsSection extends StatelessWidget {
           ),
         ],
       ),
+  ),
     );
   }
 }

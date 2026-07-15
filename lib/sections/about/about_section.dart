@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../widgets/cards/info_card.dart';
 import '../../widgets/common/section_container.dart';
+import '../../core/navigation/scroll_keys.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -11,7 +12,9 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    return SectionContainer(
+    return Container(
+  key: ScrollKeys.aboutKey,
+  child: SectionContainer(
       child: width > 900
           ? Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,6 +43,7 @@ class AboutSection extends StatelessWidget {
 
               ],
             ),
+  ),
     );
   }
 
