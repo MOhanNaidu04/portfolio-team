@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constants/app_colors.dart';
+import '../../core/url_launcher_service.dart';
 
 class ProjectCard extends StatelessWidget {
   final String title;
@@ -55,19 +56,28 @@ class ProjectCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text("View Project"),
-              ),
-              const SizedBox(width: 20),
-              OutlinedButton(
-                onPressed: () {},
-                child: const Text("GitHub"),
-              ),
-            ],
-          ),
+          
+          Align(
+  alignment: Alignment.centerLeft,
+  child: OutlinedButton.icon(
+    onPressed: () async {
+  await UrlLauncherService.openUrl(
+    "https://github.com/MOhanNaidu04/Mohan-AI-Workspace",
+  );
+},
+    icon: const Icon(Icons.code),
+    label: const Text("View on GitHub"),
+    style: OutlinedButton.styleFrom(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 16,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
+  ),
+),
         ],
       ),
     );

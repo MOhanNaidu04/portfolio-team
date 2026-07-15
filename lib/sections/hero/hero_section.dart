@@ -10,6 +10,9 @@ import '../../widgets/hero/hero_image.dart';
 import '../../widgets/hero/scroll_indicator.dart';
 import '../../core/navigation/scroll_keys.dart';
 import '../../widgets/hero/hero_background.dart';
+import '../../core/utils/download_resume.dart';
+import '../../core/navigation/scroll_keys.dart';
+
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -122,16 +125,26 @@ class HeroSection extends StatelessWidget {
   children: [
 
     PrimaryButton(
-      text: "Hire Me",
-      onPressed: () {},
-    ),
+  text: "Hire Me",
+  onPressed: () {
+    if (ScrollKeys.contactKey.currentContext != null) {
+      Scrollable.ensureVisible(
+        ScrollKeys.contactKey.currentContext!,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOut,
+      );
+    }
+  },
+),
 
     const SizedBox(width: 20),
 
     SecondaryButton(
-      text: "Download Resume",
-      onPressed: () {},
-    ),
+  text: "Download Resume",
+  onPressed: () {
+    DownloadResume.download();
+  },
+),
 
   ],
 ),

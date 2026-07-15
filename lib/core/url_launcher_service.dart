@@ -8,18 +8,20 @@ class UrlLauncherService {
       uri,
       mode: LaunchMode.externalApplication,
     )) {
-      throw Exception("Could not launch $url");
+      throw Exception('Could not launch $url');
     }
   }
 
-  static Future<void> sendEmail(String email) async {
-    final uri = Uri(
-      scheme: 'mailto',
-      path: email,
-    );
+  static Future<void> openUrl(String url) async {
+  final Uri uri = Uri.parse(url);
 
-    await launchUrl(uri);
+  if (!await launchUrl(
+    uri,
+    mode: LaunchMode.platformDefault,
+  )) {
+    throw Exception('Could not launch $url');
   }
+}
 
   static Future<void> makePhoneCall(String phone) async {
     final uri = Uri(

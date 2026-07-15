@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/navigation/scroll_keys.dart';
+import '../../core/url_launcher_service.dart';
 
 class Navbar extends StatelessWidget {
 
@@ -89,29 +90,18 @@ _menu("Home", ScrollKeys.heroKey),
               const SizedBox(width: 30),
 
               ElevatedButton(
+  onPressed: () {
+    UrlLauncherService.openUrl(
+      "assets/assets/resume/mohan_resume.pdf",
+    );
+  },
+  child: const Text("Resume"),
 
-                style: ElevatedButton.styleFrom(
-
-                  backgroundColor: AppColors.primary,
-
-                  foregroundColor: Colors.white,
-
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 28,
-                    vertical: 18,
-                  ),
-
-                ),
-
-                onPressed: () {},
-
-                child: const Text("Resume"),
 
               ),
-
             ],
-          ),
         ),
+      ),
       ),
     );
   }
