@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constants/app_spacing.dart';
 
 class SectionContainer extends StatelessWidget {
   final Widget child;
@@ -10,15 +11,19 @@ class SectionContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(
-        maxWidth: 1400,
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 1400,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.sectionHorizontal,
+            vertical: AppSpacing.sectionVertical,
+          ),
+          child: child,
+        ),
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 80,
-        vertical: 80,
-      ),
-      child: child,
     );
   }
 }
