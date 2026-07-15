@@ -9,6 +9,7 @@ import '../../widgets/buttons/secondary_button.dart';
 import '../../widgets/hero/hero_image.dart';
 import '../../widgets/hero/scroll_indicator.dart';
 import '../../core/navigation/scroll_keys.dart';
+import '../../widgets/hero/hero_background.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -17,7 +18,15 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return Stack(
+
+  children: [
+
+    const Positioned.fill(
+      child: HeroBackground(),
+    ),
+
+    Container(
   key: ScrollKeys.heroKey,
   child: SectionContainer(
       child: width > 900
@@ -36,6 +45,8 @@ class HeroSection extends StatelessWidget {
               ],
             ),
   ),
+    ),
+  ],
     );
   }
 
