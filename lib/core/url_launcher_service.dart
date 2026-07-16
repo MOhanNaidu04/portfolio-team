@@ -12,7 +12,7 @@ class UrlLauncherService {
     }
   }
 
-  static Future<void> openUrl(String url) async {
+  static Future<void> sendUrl(String url) async {
   final Uri uri = Uri.parse(url);
 
   if (!await launchUrl(
